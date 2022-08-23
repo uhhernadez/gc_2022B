@@ -11,7 +11,6 @@ void setup() {
 void draw() {
   //Punto2D copia = new Punto2D(punto);
   //copia.Dibujar();
-  
   dia += 0.5;
   punto.Dibujar(dia);
 }
