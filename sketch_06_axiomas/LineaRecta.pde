@@ -13,12 +13,14 @@ class LineaRecta {
     float y2 = m * x2 + b;
     stroke(0);
     line(x1, y1, x2, y2);
+   /*
     float dx = x2 - x1;
     float dy = y2 - y1;
     float theta = atan(dy/dx);
     textSize(128);
     fill(0);
     text(str(degrees(theta)), -100, -100);
+    */
   }
 }
 

@@ -1,18 +1,22 @@
-LineaRecta linea;
+LineaRecta l1, l2;
 
 void setup () {
   //fullScreen();
   size(512, 512);
-  linea = new LineaRecta();
+  l1 = new LineaRecta();
+  l2 = new LineaRecta();
+  l2.m = -5;
+  l2.b = 200;
 }
 
 void draw () {
   background(255);
   translate(width/2, height/2);
   ejes();
-  linea.Dibujar();
-  linea.m += 0.001;
-  linea.b += 0.1;
+  l1.Dibujar();
+  l2.Dibujar();
+  PVector p = Interseccion(l1,l2);
+  circle(p.x, p.y, 20);
 }
 
 void ejes () {
