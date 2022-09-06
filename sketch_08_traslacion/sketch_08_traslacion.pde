@@ -8,7 +8,9 @@ void setup() {
 
 void draw() {
   background(145);
+  translate(width/2, height/2);
   carro.Dibujar();
+  carro.Rotar(radians(0.5));
 }
 
 void keyPressed() {
