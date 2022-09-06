@@ -31,7 +31,12 @@ class Carrito {
     float x = centro.x * cos(theta) + centro.y * sin(theta);
     float y = -centro.x * sin(theta) + centro.y * cos(theta);
     centro.set(x, y);
+    
     //centro.x = x;
     //centro.y = y;
+  }
+  
+  void RotarPVector(float angulo) {
+    centro.rotate(angulo);
   }
 }
