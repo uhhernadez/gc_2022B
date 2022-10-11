@@ -9,8 +9,8 @@ void setup() {
 
 void draw() {
   background(0,0,0);
-  camera( 200, 200, 200,
-          0, 0, 0,
+  camera( 200, 0, 100,
+          0, 0, 100,
           0, 0, -1);
   lights();
   //gizmo.Dibujar();
