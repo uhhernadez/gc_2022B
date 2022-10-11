@@ -5,8 +5,11 @@ class Creeper {
   Pieza3D brazo_izq;
   Pieza3D tronco;
   Pieza3D cabeza;
-  Creeper () {
+  PVector posicion;
+  
+  Creeper (PVector p) {
     float largo = 100;
+    posicion = new PVector(p.x, p.y, p.z);
     pierna_der = new Pieza3D(new PVector(0,0,-largo/2)
                              , 10, 10, largo );
     pierna_izq = new Pieza3D(new PVector(0,0,-largo/2)
@@ -20,25 +23,34 @@ class Creeper {
   }
   
   void Dibujar () {
-    DibujarPiernaDer();
-    DibujarPiernaIzq();
-    DibujarTronco();
-    DibujarCabeza();
-    DibujarBrazoIzq();
-    DibujarBrazoDer();
+    pushMatrix();
+      translate(posicion.x, posicion.y, posicion.z);
+      DibujarPiernaDer();
+      DibujarPiernaIzq();
+      DibujarTronco();
+      DibujarCabeza();
+      DibujarBrazoIzq();
+      DibujarBrazoDer();
+   popMatrix();
   }
   
   void DibujarPiernaDer() {
     pushMatrix();
       translate(0,5,100);
-      pierna_der.Dibujar();
+      pushMatrix();
+        rotateY(radians(40*sin(2*PI*0.001*millis())));
+        pierna_der.Dibujar();
+      popMatrix();
     popMatrix();
   }
   
   void DibujarPiernaIzq() {
     pushMatrix();
       translate(0,-5,100);
-      pierna_izq.Dibujar();
+      pushMatrix();
+        rotateY(radians(40*cos(2*PI*0.001*millis())));
+        pierna_izq.Dibujar();
+      popMatrix();
     popMatrix();
   }
   
@@ -59,13 +71,19 @@ class Creeper {
   void DibujarBrazoIzq() {
     pushMatrix();
       translate(0,-10,115);
-      brazo_izq.Dibujar();
+      pushMatrix();
+        rotateY(radians(40*sin(2*PI*0.001*millis())));     
+        brazo_izq.Dibujar();
+      popMatrix();
     popMatrix();
   }
   void DibujarBrazoDer() {
     pushMatrix();
-      translate(0,10,115);
-      brazo_izq.Dibujar();
+      translate(0,20,115);
+      pushMatrix();
+        rotateY(radians(40*cos(2*PI*0.001*millis())));  
+        brazo_izq.Dibujar();
+      popMatrix();  
     popMatrix();
   }
 
