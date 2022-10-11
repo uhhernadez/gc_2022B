@@ -24,6 +24,8 @@ class Creeper {
     DibujarPiernaIzq();
     DibujarTronco();
     DibujarCabeza();
+    DibujarBrazoIzq();
+    DibujarBrazoDer();
   }
   
   void DibujarPiernaDer() {
@@ -51,6 +53,19 @@ class Creeper {
     pushMatrix();
       translate(0,0,130);
       cabeza.Dibujar();
+    popMatrix();
+  }
+  
+  void DibujarBrazoIzq() {
+    pushMatrix();
+      translate(0,-10,115);
+      brazo_izq.Dibujar();
+    popMatrix();
+  }
+  void DibujarBrazoDer() {
+    pushMatrix();
+      translate(0,10,115);
+      brazo_izq.Dibujar();
     popMatrix();
   }
 
