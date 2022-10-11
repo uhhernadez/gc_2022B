@@ -21,14 +21,22 @@ class Creeper {
   
   void Dibujar () {
     DibujarPiernaDer();
+    DibujarPiernaIzq();
     DibujarTronco();
     DibujarCabeza();
   }
   
   void DibujarPiernaDer() {
     pushMatrix();
-      translate(0,0,100);
+      translate(0,5,100);
       pierna_der.Dibujar();
+    popMatrix();
+  }
+  
+  void DibujarPiernaIzq() {
+    pushMatrix();
+      translate(0,-5,100);
+      pierna_izq.Dibujar();
     popMatrix();
   }
   
