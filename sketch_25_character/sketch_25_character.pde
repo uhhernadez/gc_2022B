@@ -13,18 +13,25 @@ void draw() {
 }
 
 void keyPressed() {
+  float dt = 4;
   if (key == CODED) {
     //  UP, DOWN, LEFT, RIGHT
     if (keyCode == UP) {
-      
-    } else if (keyCode == DOWN) {
-      
-    } else if (keyCode == LEFT) {
-      
-    } else if (keyCode == RIGHT) {
-      
+      dog.Walk(0, -dt);
+    }
+    if (keyCode == DOWN) {
+      dog.Walk(0, dt);
+    }
+    if (keyCode == LEFT) {
+      dog.Walk(-dt, 0);
+    }
+    if (keyCode == RIGHT) {
+      dog.Walk(dt, 0);
     } 
   } 
+  if (keyCode == 32) {
+      println("Barra");
+  }
 }
 
 void keyReleased() {
