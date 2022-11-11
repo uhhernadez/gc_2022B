@@ -79,7 +79,11 @@ class Spline {
           vertex(p.x, p.y);
         }
       endShape();
-    fill(255);
+    fill(127);
+    
+    circle(p0.x, p0.y, 10);
+    circle(p1.x, p1.y, 10);
+    circle(p2.x, p2.y, 10);
   }
 
 }
