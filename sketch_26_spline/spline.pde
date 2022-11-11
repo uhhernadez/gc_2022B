@@ -63,17 +63,23 @@ class Spline {
     }
     
     for (float xx = p1.x; xx < p2.x; xx+=dt) {
-      float t = (xx - p1.x) / (p2.x - p0.x);
+      float t = (xx - p1.x) / (p2.x - p1.x);
       float y = (1 - t) * p1.y 
                 + t * p2.y 
-                + t * (1 -t) * ((1-t)*a_1 + t * b_1 );
+                + t * (1 -t) * ((1-t)*a_2 + t * b_2 );
       puntos.add(new PVector( xx, y));          
     }
     
   }
 
   void Dibujar() {
- 
+    noFill();
+      beginShape();
+        for(PVector p: puntos) {
+          vertex(p.x, p.y);
+        }
+      endShape();
+    fill(255);
   }
 
 }
